@@ -49,3 +49,8 @@ the same functions is provided `chrome://history/syncedTabs`
 * deviceがゼロ件のときの処理
 * titleがurlでurl文字列が十分に長いときに折り返さずにoverflowしてしまう問題
 * リスト表示じゃなくてfavicon表示にしたい
+* 表示を弄るためのオプションの設定画面をつくる
+
+
+## Thanks
+[Material Icons](https://www.google.com/design/icons/)
