@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+    "name": "syncedTabs",
+    "version": "0.0.0",
+    "permissions": [
+      "tabs",
+      "sessions",
+      "<all_urls>"
+    ],
+    "browser_action": {
+        "default_popup": "index.html"
+    }
+}

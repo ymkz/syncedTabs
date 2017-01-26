@@ -1,0 +1,36 @@
+/****************************
+    Font
+****************************/
+
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+
+/****************************
+    Reset
+****************************/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, a, p, code, img, kbd, q, small, strong, dl, dt, dd, ol, ul, li, form, label, table, header {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/****************************
+    Main
+****************************/
+
+:root {
+  --root-width: 300px;
+}
+
+html, body {
+  width: var(--root-width);
+  overflow: scroll;
+}
