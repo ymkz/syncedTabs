@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 
-html, body, div, span, h1, h2, h3, h4, h5, h6, a, p, code, img, kbd, q, small, strong, dl, dt, dd, ol, ul, li, form, label, table, header {
+html, body, div, span, h1, h2, h3, h4, h5, h6, a, p, code, img, q, small, strong, dl, dt, dd, ol, ul, li, form, label, table, header {
   margin: 0;
   padding: 0;
   border: 0;

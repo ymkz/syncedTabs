@@ -1,5 +1,5 @@
 # syncedTabs
-> Chrome Extension with ES6 + Yarn + React + Bulma + (CSS Modules)
+> [syncedTabs](https://chrome.google.com/webstore/detail/syncedtabs/pidbmkbopopclkdjflnlcgnefcifdmno) is Chrome Extension with ES6 + Yarn + React + Bulma + (CSS Modules)
 
 
 ## TL;TR

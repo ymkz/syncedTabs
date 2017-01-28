@@ -65,7 +65,6 @@ export default class Root extends Component {
   }
 
   render() {
-    console.log(this.state.data)
     return (
       <div className={styles.container}>
         {this.state.data.map((device, index) => (
