@@ -1,4 +1,3 @@
 .container {
   width: var(--root-width);
-  overflow: scroll;
 }

@@ -4,7 +4,7 @@
   "short_name": "syncedTabs",
   "description": "access to pages opend in your devices",
   "homepage_url": "https://github.com/ymkz/syncedTabs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "permissions": [
     "tabs",
     "sessions",

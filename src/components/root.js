@@ -33,9 +33,12 @@ const get = () => {
         const tabs = []
         device.sessions[0].window.tabs.map(tab => {
           const info = {
-            favIconUrl: tab.favIconUrl,
+            windowId: tab.windowId,
+            pinned: tab.pinned,
+            url: tab.url,
             title: tab.title,
-            url: tab.url
+            favIconUrl: tab.favIconUrl,
+            sessionId: tab.sessionId
           }
           tabs.push(info)
         })
