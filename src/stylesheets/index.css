@@ -28,9 +28,12 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, a, p, code, img, q, small, strong
 
 :root {
   --root-width: 300px;
+  --root-max-height: 840px;
 }
 
 html, body {
   width: var(--root-width);
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: var(--root-max-height);
 }

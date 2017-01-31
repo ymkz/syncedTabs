@@ -23,39 +23,19 @@ the same functions is provided `chrome://history/syncedTabs`
 * `yarn build:watch` : build files to `dist/bundle.js` observing code changes
 
 
-## Data Structure
-```
-[
-  {
-    deviceName: "deviceName",
-    tabs: [
-      {
-        favIconUrl: "favIconUrl",
-        title: "title",
-        url: "url"
-      },
-      ...
-    ]
-  },
-  ...
-]
-```
-
-
 ## ToDo
 * pinされてるタブは弾く(?)
 * titleがurlのもの[https://|http://|chrome-extension://]はparseしてうまくやる
 * deviceがゼロ件のときの処理
-* titleがurlでurl文字列が十分に長いときに折り返さずにoverflowしてしまう問題
 * リスト表示じゃなくてfavicon表示にしたい
 * 表示を弄るためのオプションの設定画面をつくる
 * 全タブ一斉展開(多すぎる時には確認?)
 * スクロールバーの見た目の差異吸収
-* WebStore用イメージ用意
 * Whitelistでignoreするページの設定する(?)
 
 
 ## Changelog
+- 2017/1/30 version 1.0.2 modify overflow styling
 - 2017/1/27 version 1.0.1 update for chrome web store
 - 2017/1/26 version 1.0.0 release now available!
 
