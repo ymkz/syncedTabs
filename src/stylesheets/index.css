@@ -1,10 +1,4 @@
 /****************************
-    Font
-****************************/
-
-@import url('https://fonts.googleapis.com/css?family=Exo+2');
-
-/****************************
     Reset
 ****************************/
 
@@ -28,12 +22,28 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, a, p, code, img, q, small, strong
 
 :root {
   --root-width: 300px;
-  --root-max-height: 840px;
+  --root-max-height: 720px;
 }
 
 html, body {
   width: var(--root-width);
-  overflow-y: scroll;
-  overflow-x: hidden;
   max-height: var(--root-max-height);
+}
+
+/****************************
+    Scrollbar
+****************************/
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:vertical {
+  background: rgba(0, 0, 0, .4);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:vertical:active {
+  background: rgba(0, 0, 0, .5);
+  border-radius: 100px;
 }

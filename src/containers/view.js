@@ -1,28 +1,10 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import store from 'store'
 import { Card, CardContent, Content, Subtitle } from 're-bulma'
-import styles from '../stylesheets/root.css'
+import style from '../stylesheets/view.css'
 
-const Tab = ({ tab }) => (
-  <li>
-    <a href={tab.url} target="_blank">{tab.title}</a>
-  </li>
-)
-
-const Device = ({ device }) => (
-  <Card>
-    <CardContent>
-      <Subtitle size="is3">{device.deviceName}</Subtitle>
-      <Content>
-        <ul>
-          {device.tabs.map((tab, index) => (
-            <Tab tab={tab} key={index} />
-          ))}
-        </ul>
-      </Content>
-    </CardContent>
-  </Card>
-)
+const OPTION_PINNED_INCLUDE = store.get('optionPinnedInclude')
 
 const get = () => {
   return new Promise((resolve) => {
@@ -31,7 +13,7 @@ const get = () => {
       devices.map(device => {
         const deviceName = device.deviceName
         const tabs = []
-        device.sessions[0].window.tabs.map(tab => {
+        device.sessions[0].window.tabs.filter(tab => tab.pinned === false || OPTION_PINNED_INCLUDE === true).map(tab => {
           const info = {
             windowId: tab.windowId,
             pinned: tab.pinned,
@@ -49,7 +31,30 @@ const get = () => {
   })
 }
 
-export default class Root extends Component {
+const Tab = ({ tab }) => (
+  <li>
+    <a href={tab.url} target="_blank">{tab.title}</a>
+  </li>
+)
+
+const Device = ({ device }) => (
+  <Card>
+    <CardContent>
+      <div className={style.heading}>
+        <Subtitle size="is3">{device.deviceName}</Subtitle>
+      </div>
+      <Content>
+        <ul>
+          {device.tabs.map((tab, index) => (
+            <Tab tab={tab} key={index} />
+          ))}
+        </ul>
+      </Content>
+    </CardContent>
+  </Card>
+)
+
+export default class View extends Component {
 
   state = {
     data: []
@@ -68,8 +73,9 @@ export default class Root extends Component {
   }
 
   render() {
+    console.log(this.state.data)
     return (
-      <div className={styles.container}>
+      <div className={style.container}>
         {this.state.data.map((device, index) => (
           <Device device={device} key={index} />
         ))}
@@ -77,3 +83,5 @@ export default class Root extends Component {
     )
   }
 }
+
+// <div className={style.deploy}><i className="fa fa-external-link" aria-hidden="true"></i></div>

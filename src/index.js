@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Root from './components/root'
+import View from './containers/view'
 import './stylesheets/index.css'
 
 ReactDOM.render(
-  <Root />, document.getElementById("root")
+  <View />, document.getElementById("root")
 )

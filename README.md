@@ -3,7 +3,7 @@
 
 
 ## TL;DR
-> __Faster access to pages opened in your other device.__  
+> __Faster access to pages opened in your other devices.__  
 Do a search something outside with a smartphone.  
 After going home, you access them from a computer.
 
@@ -13,31 +13,25 @@ the same functions is provided `chrome://history/syncedTabs`
 * Using __Google Chrome__ in your devices
 
 
-## Development
-* in development, edit files under `src` directory
-* for debugging in chrome, add `dist` directory to chrome with `developer mode`
-
-
 ## Build
-* `yarn build` : build files to `dist/bundle.js`
-* `yarn build:watch` : build files to `dist/bundle.js` observing code changes
+* `yarn build` : build files to `dist/*.bundle.js`
+* `yarn build:watch` : build files to `dist/*.bundle.js` observing code changes
 
 
 ## ToDo
-* pinされてるタブは弾く(?)
 * titleがurlのもの[https://|http://|chrome-extension://]はparseしてうまくやる
 * deviceがゼロ件のときの処理
-* リスト表示じゃなくてfavicon表示にしたい
-* 表示を弄るためのオプションの設定画面をつくる
+* リスト表示じゃなくてfavicon表示にしたい(スマホで開いてるページだとfavIconUrlがundefinedする??)
+* オプションページのi18n対応
 * 全タブ一斉展開(多すぎる時には確認?)
-* スクロールバーの見た目の差異吸収
 * Whitelistでignoreするページの設定する(?)
 
 
 ## Changelog
-- 2017/1/30 version 1.0.2 modify overflow styling
-- 2017/1/27 version 1.0.1 update for chrome web store
-- 2017/1/26 version 1.0.0 release now available!
+* version 1.0.3 (2017/02/06) implement to expect pinned tab and setting
+* version 1.0.2 (2017/01/30) modify overflow styling
+* version 1.0.1 (2017/01/27) update for chrome web store
+* version 1.0.0 (2017/01/26) release now available!
 
 -------------
 

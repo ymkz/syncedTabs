@@ -5,20 +5,19 @@ import autoprefixer from 'autoprefixer'
 export default {
   devtool: 'inline-source-map',
 
-  entry: './src/index',
+  entry: {
+    'index': './src/index',
+    'option': './src/option',
+  },
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
   },
 
   resolve: {
     extensions: [ '', '.js', '.jsx' ],
   },
-
-  plugins: [
-    new webpack.NoErrorsPlugin(),
-  ],
 
   module: {
     loaders: [

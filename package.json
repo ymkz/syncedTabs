@@ -1,15 +1,16 @@
 {
   "name": "extension",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "scripts": {
     "build": "webpack --progress --color --display-error-details",
     "build:watch": "webpack --progress --color --watch --display-error-details"
   },
   "dependencies": {
+    "re-bulma": "^0.2.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "re-bulma": "^0.2.3"
+    "store": "^1.3.20"
   },
   "devDependencies": {
     "autoprefixer": "^6.6.1",
