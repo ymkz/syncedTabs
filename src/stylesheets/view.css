@@ -2,14 +2,3 @@
   width: var(--root-width);
   overflow-y: scroll;
 }
-
-.heading {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.deploy {
-  margin-left: auto;
-}
