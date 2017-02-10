@@ -14,8 +14,8 @@ the same functions is provided `chrome://history/syncedTabs`
 
 
 ## Build
-* `yarn build` : build files to `dist/*.bundle.js`
-* `yarn build:watch` : build files to `dist/*.bundle.js` observing code changes
+* `yarn build` : build files to `dist/javascripts/*.bundle.js`
+* `yarn build:watch` : build files to `dist/javascripts/*.bundle.js` observing code changes
 
 
 ## ToDo
@@ -28,10 +28,10 @@ the same functions is provided `chrome://history/syncedTabs`
 
 
 ## Changelog
-* version 1.0.3 (2017/02/06) implement to expect pinned tab and setting
-* version 1.0.2 (2017/01/30) modify overflow styling
-* version 1.0.1 (2017/01/27) update for chrome web store
-* version 1.0.0 (2017/01/26) release now available!
+* v1.0.3 (2017/02/06) implement to expect pinned tab and setting
+* v1.0.2 (2017/01/30) modify overflow styling
+* v1.0.1 (2017/01/27) update for chrome web store
+* v1.0.0 (2017/01/26) release now available!
 
 -------------
 
