@@ -30,7 +30,7 @@ export default {
       {
         test: /\.css$/,
         include: path.join(__dirname, 'src'),
-        loaders: [ 'style', 'css?modules&localIdentName=[name]-[local]', 'postcss' ],
+        loaders: [ 'style', 'css?importLoader=1&modules&localIdentName=[name]-[local]', 'postcss' ],
       },
     ],
   },

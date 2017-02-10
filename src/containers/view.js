@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import store from 'store'
 import { Card, CardContent, Content, Subtitle } from 're-bulma'
-import style from '../stylesheets/view.css'
+import '../stylesheets/view.css'
 
 const OPTION_PINNED_INCLUDE = store.get('optionPinnedInclude')
 
@@ -40,7 +40,7 @@ const Tab = ({ tab }) => (
 const Device = ({ device }) => (
   <Card>
     <CardContent>
-      <div className={style.heading}>
+      <div styleName="heading">
         <Subtitle size="is3">{device.deviceName}</Subtitle>
       </div>
       <Content>
@@ -75,7 +75,7 @@ export default class View extends Component {
   render() {
     console.log(this.state.data)
     return (
-      <div className={style.container}>
+      <div styleName="container">
         {this.state.data.map((device, index) => (
           <Device device={device} key={index} />
         ))}
