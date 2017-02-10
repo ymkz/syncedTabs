@@ -7,11 +7,11 @@ export default {
 
   entry: {
     'index': './src/index',
-    'option': './src/option',
+    'option': './src/option/option',
   },
 
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist/javascripts'),
     filename: '[name].bundle.js',
   },
 
