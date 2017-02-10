@@ -83,5 +83,3 @@ export default class View extends Component {
     )
   }
 }
-
-// <div className={style.deploy}><i className="fa fa-external-link" aria-hidden="true"></i></div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import View from './containers/view'
+import View from './containers/View'
 import './stylesheets/index.css'
 
 ReactDOM.render(
