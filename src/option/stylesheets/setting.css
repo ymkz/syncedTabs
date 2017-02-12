@@ -1,11 +1,28 @@
 .container {
-  width: 50vw;
+  width: 40vw;
   margin: 0 auto;
+  font-family: "Mplus 1p";
 }
 
 .header {
   border-bottom: 1px solid #424242;
   padding: 20px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 36px;
+}
+
+.nav {
+  margin-left: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.icon {
+  color: black;
 }
 
 .options {

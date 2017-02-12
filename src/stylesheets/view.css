@@ -2,3 +2,18 @@
   width: var(--root-width);
   overflow-y: scroll;
 }
+
+.heading {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  color: #1fc8db;
+}
+
+.link:hover {
+  color: #847bb9;
+}

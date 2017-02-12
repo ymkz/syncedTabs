@@ -28,6 +28,7 @@ the same functions is provided `chrome://history/syncedTabs`
 
 
 ## Changelog
+* v1.0.4 (2017/02/12) implement to open link background
 * v1.0.3 (2017/02/06) implement to expect pinned tab and setting
 * v1.0.2 (2017/01/30) modify overflow styling
 * v1.0.1 (2017/01/27) update for chrome web store
