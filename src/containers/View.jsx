@@ -33,8 +33,8 @@ export const get = () => {
 }
 
 const Tab = ({ tab, active }) => (
-  <li>
-    <span styleName="link" onClick={() => chrome.tabs.create({url: tab.url, active: active})}>{tab.title}</span>
+  <li styleName="link" onClick={() => chrome.tabs.create({url: tab.url, active: active})}>
+    <span>{tab.title}</span>
   </li>
 )
 
@@ -45,11 +45,16 @@ const Device = ({ device, active }) => (
         <Subtitle size="is3">{device.deviceName}</Subtitle>
       </div>
       <Content>
-        <ul>
-          {device.tabs.map((tab, index) => (
-            <Tab tab={tab} active={active} key={index} />
-          ))}
-        </ul>
+        {device.tabs.length === 0 ?
+          <div styleName="none">
+            <span>There are no tabs to display.</span>
+          </div>
+        : <ul>
+            {device.tabs.map((tab, index) => (
+              <Tab tab={tab} active={active} key={index} />
+            ))}
+          </ul>
+        }
       </Content>
     </CardContent>
   </Card>
@@ -68,6 +73,8 @@ export default class View extends Component {
   }
 
   render() {
+    console.log(this.state)
+
     return (
       <div styleName="container">
         {this.state.data.map((device, index) => (

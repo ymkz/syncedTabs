@@ -15,19 +15,19 @@ the same functions is provided `chrome://history/syncedTabs`
 
 ## Build
 * `yarn build` : build files to `dist/javascripts/*.bundle.js`
-* `yarn build:watch` : build files to `dist/javascripts/*.bundle.js` observing code changes
+* `yarn build:watch` : build files to `dist/javascripts/*.bundle.js` observing code change
 
 
 ## ToDo
 * titleがurlのもの[https://|http://|chrome-extension://]はparseしてうまくやる
 * deviceがゼロ件のときの処理
-* リスト表示じゃなくてfavicon表示にしたい(スマホで開いてるページだとfavIconUrlがundefinedする??)
 * オプションページのi18n対応
-* 全タブ一斉展開(多すぎる時には確認?)
 * Whitelistでignoreするページの設定する(?)
+* 複数デバイスで重複するページを除去
 
 
 ## Changelog
+* v1.0.5 (2017/02/17) implement to display if device has no tab
 * v1.0.4 (2017/02/12) implement to open link background
 * v1.0.3 (2017/02/06) implement to expect pinned tab and setting
 * v1.0.2 (2017/01/30) modify overflow styling
@@ -36,5 +36,5 @@ the same functions is provided `chrome://history/syncedTabs`
 
 -------------
 
-## Thanks
+### Thanks
 [Material Icons](https://www.google.com/design/icons/)
