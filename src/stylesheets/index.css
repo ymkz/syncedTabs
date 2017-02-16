@@ -30,6 +30,11 @@ html, body {
   max-height: var(--root-max-height);
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 /****************************
     Scrollbar
 ****************************/

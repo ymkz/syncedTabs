@@ -1,6 +1,5 @@
-import path from 'path'
+import { resolve } from 'path'
 import webpack from 'webpack'
-import autoprefixer from 'autoprefixer'
 
 export default {
   devtool: 'inline-source-map',
@@ -11,31 +10,32 @@ export default {
   },
 
   output: {
-    path: path.join(__dirname, 'dist/javascripts'),
     filename: '[name].bundle.js',
+    path: resolve(__dirname, 'dist/javascripts'),
   },
 
   resolve: {
-    extensions: [ '', '.js', '.jsx' ],
+    extensions: [ '.js', '.jsx' ],
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js(x?)$/,
         exclude: /node_modules/,
-        include: path.join(__dirname, 'src'),
-        loader: 'babel-loader',
+        include: resolve(__dirname, 'src'),
+        use: [
+          'babel-loader',
+        ],
       },
       {
         test: /\.css$/,
-        include: path.join(__dirname, 'src'),
-        loaders: [ 'style', 'css?importLoader=1&modules&localIdentName=[name]-[local]', 'postcss' ],
+        include: resolve(__dirname, 'src'),
+        use: [
+          'style-loader',
+          'css-loader?importLoader=1&modules&localIdentName=[name]-[local]',
+        ],
       },
     ],
   },
-
-  postcss: [
-    autoprefixer,
-  ],
-}
+};
