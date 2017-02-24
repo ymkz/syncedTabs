@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import store from 'store'
-import { Card, CardContent, Content, Subtitle } from 're-bulma'
-import '../stylesheets/view.css'
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import store from 'store';
+import { Card, CardContent, Content, Subtitle } from 're-bulma';
+import './style.css';
 
-const OPTION_OPEN_FOREGROUND = store.get('optionOpenForeground')
-const OPTION_PINNED_INCLUDE = store.get('optionPinnedInclude')
+const OPTION_OPEN_FOREGROUND = store.get('optionOpenForeground');
+const OPTION_PINNED_INCLUDE = store.get('optionPinnedInclude');
 
-export const get = () => {
+const get = () => {
   return new Promise((resolve) => {
     chrome.sessions.getDevices(devices => {
-      const data = []
+      const data = [];
       devices.map(device => {
-        const deviceName = device.deviceName
-        const tabs = []
+        const deviceName = device.deviceName;
+        const tabs = [];
         device.sessions[0].window.tabs.filter(tab => tab.pinned === false || OPTION_PINNED_INCLUDE === true).map(tab => {
           const info = {
             windowId: tab.windowId,
@@ -22,21 +22,21 @@ export const get = () => {
             title: tab.title,
             favIconUrl: tab.favIconUrl,
             sessionId: tab.sessionId
-          }
-          tabs.push(info)
-        })
-        data.push({ deviceName: deviceName, tabs: tabs })
-      })
-      resolve(data)
-    })
-  })
+          };
+          tabs.push(info);
+        });
+        data.push({ deviceName: deviceName, tabs: tabs });
+      });
+      resolve(data);
+    });
+  });
 }
 
 const Tab = ({ tab, active }) => (
   <li styleName="link" onClick={() => chrome.tabs.create({url: tab.url, active: active})}>
     <span>{tab.title}</span>
   </li>
-)
+);
 
 const Device = ({ device, active }) => (
   <Card>
@@ -58,7 +58,7 @@ const Device = ({ device, active }) => (
       </Content>
     </CardContent>
   </Card>
-)
+);
 
 export default class View extends Component {
 
@@ -68,12 +68,12 @@ export default class View extends Component {
 
   componentDidMount() {
     get().then(res => {
-      this.setState({ data: res })
+      this.setState({ data: res });
     })
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state);
 
     return (
       <div styleName="container">
@@ -81,6 +81,6 @@ export default class View extends Component {
           <Device device={device} active={OPTION_OPEN_FOREGROUND} key={index} />
         ))}
       </div>
-    )
+    );
   }
 }

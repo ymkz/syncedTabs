@@ -1,12 +1,12 @@
-import { resolve } from 'path'
-import webpack from 'webpack'
+const { resolve } = require('path');
+const webpack = require('webpack');
 
-export default {
+module.exports = {
   devtool: 'inline-source-map',
 
   entry: {
-    'index': './src/index',
-    'option': './src/option/option',
+    'app': './src/app',
+    'option': './src/option',
   },
 
   output: {
@@ -15,25 +15,24 @@ export default {
   },
 
   resolve: {
-    extensions: [ '.js', '.jsx' ],
+    extensions: [ '.js' ],
   },
 
   module: {
     rules: [
       {
-        test: /\.js(x?)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        include: resolve(__dirname, 'src'),
         use: [
           'babel-loader',
         ],
       },
       {
         test: /\.css$/,
-        include: resolve(__dirname, 'src'),
         use: [
           'style-loader',
           'css-loader?importLoader=1&modules&localIdentName=[name]-[local]',
+          'postcss-loader',
         ],
       },
     ],

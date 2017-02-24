@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import store from 'store'
-import '../stylesheets/setting.css'
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import store from 'store';
+import './style.css';
 
 export default class Setting extends Component {
 
@@ -12,14 +12,14 @@ export default class Setting extends Component {
 
   onChangeOptionPinnedInclude() {
     this.setState({ optionPinnedInclude: !this.state.optionPinnedInclude }, () => {
-      store.set('optionPinnedInclude', this.state.optionPinnedInclude)
-    })
+      store.set('optionPinnedInclude', this.state.optionPinnedInclude);
+    });
   }
 
   onChangeOptionOpenForeground() {
     this.setState({ optionOpenForeground: !this.state.optionOpenForeground }, () => {
-      store.set('optionOpenForeground', this.state.optionOpenForeground)
-    })
+      store.set('optionOpenForeground', this.state.optionOpenForeground);
+    });
   }
 
   render() {
@@ -43,6 +43,6 @@ export default class Setting extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

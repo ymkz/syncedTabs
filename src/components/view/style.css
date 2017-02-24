@@ -1,7 +1,3 @@
-/****************************
-    Reset
-****************************/
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -15,10 +11,6 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, a, p, code, img, q, small, strong
   vertical-align: baseline;
   background: transparent;
 }
-
-/****************************
-    Main
-****************************/
 
 :root {
   --root-width: 300px;
@@ -35,10 +27,6 @@ html {
   text-rendering: optimizeLegibility;
 }
 
-/****************************
-    Scrollbar
-****************************/
-
 ::-webkit-scrollbar {
   width: 7px;
   background-color: rgba(0, 0, 0, 0);
@@ -51,4 +39,29 @@ html {
 ::-webkit-scrollbar-thumb:vertical:active {
   background: rgba(0, 0, 0, .5);
   border-radius: 100px;
+}
+
+.container {
+  overflow-y: scroll;
+}
+
+.heading {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.none {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  color: #1fc8db;
+  cursor: pointer;
+  &:hover {
+    color: #847bb9;
+  }
 }
