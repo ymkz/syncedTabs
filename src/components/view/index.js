@@ -12,10 +12,13 @@ const get = () => {
     chrome.sessions.getDevices(devices => {
       const data = [];
       devices.map(device => {
+        console.log(device)
         const deviceName = device.deviceName;
+        const lastModified = device.sessions[0].lastModified;
         const tabs = [];
         device.sessions[0].window.tabs.filter(tab => tab.pinned === false || OPTION_PINNED_INCLUDE === true).map(tab => {
           const info = {
+            index: tab.index,
             windowId: tab.windowId,
             pinned: tab.pinned,
             url: tab.url,
@@ -25,12 +28,18 @@ const get = () => {
           };
           tabs.push(info);
         });
-        data.push({ deviceName: deviceName, tabs: tabs });
+        data.push({ deviceName: deviceName, lastModified: lastModified, tabs: tabs });
       });
       resolve(data);
     });
   });
 }
+
+const None = ({ display }) => (
+  <div styleName="none">
+    <span>{display}</span>
+  </div>
+);
 
 const Tab = ({ tab, active }) => (
   <li styleName="link" onClick={() => chrome.tabs.create({url: tab.url, active: active})}>
@@ -46,9 +55,7 @@ const Device = ({ device, active }) => (
       </div>
       <Content>
         {device.tabs.length === 0 ?
-          <div styleName="none">
-            <span>There are no tabs to display.</span>
-          </div>
+          <None display="There are no tabs to display." />
         : <ul>
             {device.tabs.map((tab, index) => (
               <Tab tab={tab} active={active} key={index} />
@@ -73,7 +80,15 @@ export default class View extends Component {
   }
 
   render() {
-    console.log(this.state);
+    console.log("state: ", this.state, "length: ", this.state.data.length);
+
+    if (this.state.data.length === 0) {
+      return (
+        <div styleName="container">
+          <None display="There are no devices to display." />
+        </div>
+      );
+    }
 
     return (
       <div styleName="container">

@@ -20,13 +20,14 @@ the same functions is provided `chrome://history/syncedTabs`
 
 ## ToDo
 * titleがurlのもの[https://|http://|chrome-extension://]はparseしてうまくやる
-* deviceがゼロ件のときの処理
 * オプションページのi18n対応
+* リストスタイル => favicon
 * Whitelistでignoreするページの設定する(?)
 * 複数デバイスで重複するページを除去
 
 
 ## Changelog
+* v1.0.6 (2017/02/25) implement to display if no device
 * v1.0.5 (2017/02/17) implement to display if device has no tab
 * v1.0.4 (2017/02/12) implement to open link background
 * v1.0.3 (2017/02/06) implement to expect pinned tab and setting
