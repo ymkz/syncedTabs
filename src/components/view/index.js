@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import store from 'store';
+import moment from 'moment';
 import { Card, CardContent, Content, Subtitle } from 're-bulma';
 import './style.css';
 
-const OPTION_OPEN_FOREGROUND = store.get('optionOpenForeground');
-const OPTION_PINNED_INCLUDE = store.get('optionPinnedInclude');
+const OPTION_OPEN_FOREGROUND = store.get('optionOpenForeground') || false;
+const OPTION_PINNED_INCLUDE = store.get('optionPinnedInclude') || false;
+const OPTION_LASTMODIFIED_DISPLAY = store.get('optionLastmodifiedDisplay') || false;
 
 const get = () => {
   return new Promise((resolve) => {
     chrome.sessions.getDevices(devices => {
       const data = [];
       devices.map(device => {
-        console.log(device)
         const deviceName = device.deviceName;
         const lastModified = device.sessions[0].lastModified;
         const tabs = [];
@@ -35,6 +36,12 @@ const get = () => {
   });
 }
 
+const Time = ({ time }) => (
+  <div styleName="modified">
+    <span>{moment.unix(time).format('MMMM Do YYYY, H:mm:ss')}</span>
+  </div>
+);
+
 const None = ({ display }) => (
   <div styleName="none">
     <span>{display}</span>
@@ -53,6 +60,9 @@ const Device = ({ device, active }) => (
       <div styleName="heading">
         <Subtitle size="is3">{device.deviceName}</Subtitle>
       </div>
+      {OPTION_LASTMODIFIED_DISPLAY &&
+        <Time time={device.lastModified} />
+      }
       <Content>
         {device.tabs.length === 0 ?
           <None display="There are no tabs to display." />
@@ -74,13 +84,11 @@ export default class View extends Component {
   }
 
   componentDidMount() {
-    get().then(res => {
-      this.setState({ data: res });
-    })
+    get().then(response => this.setState({ data: response }));
   }
 
   render() {
-    console.log("state: ", this.state, "length: ", this.state.data.length);
+    console.log("state: ", this.state.data, "length: ", this.state.data.length);
 
     if (this.state.data.length === 0) {
       return (

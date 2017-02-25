@@ -22,11 +22,13 @@ the same functions is provided `chrome://history/syncedTabs`
 * titleがurlのもの[https://|http://|chrome-extension://]はparseしてうまくやる
 * オプションページのi18n対応
 * リストスタイル => favicon
+* lastModifiedの表示(locale)
 * Whitelistでignoreするページの設定する(?)
 * 複数デバイスで重複するページを除去
 
 
 ## Changelog
+* v1.0.7 (2017/02/26) implement to display last modified time
 * v1.0.6 (2017/02/25) implement to display if no device
 * v1.0.5 (2017/02/17) implement to display if device has no tab
 * v1.0.4 (2017/02/12) implement to open link background

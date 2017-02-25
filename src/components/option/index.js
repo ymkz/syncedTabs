@@ -7,7 +7,8 @@ export default class Setting extends Component {
 
   state = {
     optionPinnedInclude: store.get('optionPinnedInclude') || false,
-    optionOpenForeground: store.get('optionOpenForeground') || false
+    optionOpenForeground: store.get('optionOpenForeground') || false,
+    optionLastmodifiedDisplay: store.get('optionLastmodifiedDisplay') || false,
   }
 
   onChangeOptionPinnedInclude() {
@@ -19,6 +20,12 @@ export default class Setting extends Component {
   onChangeOptionOpenForeground() {
     this.setState({ optionOpenForeground: !this.state.optionOpenForeground }, () => {
       store.set('optionOpenForeground', this.state.optionOpenForeground);
+    });
+  }
+
+  onChangeOptionLastmodifiedDisplay() {
+    this.setState({ optionLastmodifiedDisplay: !this.state.optionLastmodifiedDisplay }, () => {
+      store.set('optionLastmodifiedDisplay', this.state.optionLastmodifiedDisplay);
     });
   }
 
@@ -40,6 +47,10 @@ export default class Setting extends Component {
           <div styleName="option">
             <input id="optionOpenForeground" type="checkbox" checked={this.state.optionOpenForeground} onChange={::this.onChangeOptionOpenForeground} />
             <label htmlFor="optionOpenForeground">リンクをフォアグラウンドで開く</label>
+          </div>
+          <div styleName="option">
+            <input id="optionLastmodifiedDisplay" type="checkbox" checked={this.state.optionLastmodifiedDisplay} onChange={::this.onChangeOptionLastmodifiedDisplay} />
+            <label htmlFor="optionLastmodifiedDisplay">最終更新時間を表示する</label>
           </div>
         </div>
       </div>

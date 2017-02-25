@@ -52,6 +52,13 @@ html {
   align-items: center;
 }
 
+.modified {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .none {
   display: flex;
   justify-content: center;

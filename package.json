@@ -1,6 +1,6 @@
 {
   "name": "extension",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -8,9 +8,11 @@
   },
   "scripts": {
     "build": "webpack --progress --color --display-error-details",
-    "build:watch": "webpack --progress --color --watch --display-error-details"
+    "build:watch": "webpack --progress --color --watch --display-error-details",
+    "archive": "zip -r syncedtabs.zip dist"
   },
   "dependencies": {
+    "moment": "^2.17.1",
     "re-bulma": "^0.2.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -25,7 +27,6 @@
     "babel-preset-stage-0": "^6.22.0",
     "css-loader": "^0.26.1",
     "file-loader": "^0.9.0",
-    "postcss": "^5.2.15",
     "postcss-cssnext": "^2.9.0",
     "postcss-loader": "^1.3.1",
     "style-loader": "^0.13.1",

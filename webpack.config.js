@@ -4,6 +4,8 @@ const webpack = require('webpack');
 module.exports = {
   devtool: 'inline-source-map',
 
+  stats:  'minimal',
+
   entry: {
     'app': './src/app',
     'option': './src/option',
@@ -14,14 +16,11 @@ module.exports = {
     path: resolve(__dirname, 'dist/javascripts'),
   },
 
-  resolve: {
-    extensions: [ '.js' ],
-  },
-
   module: {
     rules: [
       {
         test: /\.js$/,
+        include: resolve(__dirname, './src'),
         exclude: /node_modules/,
         use: [
           'babel-loader',
@@ -29,9 +28,19 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        include: resolve(__dirname, './src'),
+        exclude: /node_modules/,
         use: [
           'style-loader',
-          'css-loader?importLoader=1&modules&localIdentName=[name]-[local]',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true,
+              importLoaders: 1,
+              localIdentName: '[name]-[local]',
+            }
+          },
           'postcss-loader',
         ],
       },
