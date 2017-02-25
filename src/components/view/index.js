@@ -42,9 +42,9 @@ const Time = ({ time }) => (
   </div>
 );
 
-const None = ({ display }) => (
+const None = ({ text }) => (
   <div styleName="none">
-    <span>{display}</span>
+    <span>{text}</span>
   </div>
 );
 
@@ -65,7 +65,7 @@ const Device = ({ device, active }) => (
       }
       <Content>
         {device.tabs.length === 0 ?
-          <None display="There are no tabs to display." />
+          <None text="There are no tabs to display." />
         : <ul>
             {device.tabs.map((tab, index) => (
               <Tab tab={tab} active={active} key={index} />
@@ -93,7 +93,7 @@ export default class View extends Component {
     if (this.state.data.length === 0) {
       return (
         <div styleName="container">
-          <None display="There are no devices to display." />
+          <None text="There are no devices to display." />
         </div>
       );
     }
