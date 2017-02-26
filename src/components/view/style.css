@@ -1,82 +1,50 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html, body, div, span, a, p, img, ul, li, label {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
+@import '../shared/reset.css';
 
 :root {
   --root-width: 300px;
-  --root-max-height: 720px;
   --default-padding: 16px;
   --default-font-size: 14px;
-}
-
-html, body {
-  width: var(--root-width);
-  max-height: var(--root-max-height);
-}
-
-html {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-::-webkit-scrollbar {
-  width: 5px;
-  background-color: rgba(0, 0, 0, 0);
-  border-radius: 100px;
-}
-::-webkit-scrollbar-thumb:vertical {
-  background: rgba(0, 0, 0, .3);
-  border-radius: 100px;
-}
-::-webkit-scrollbar-thumb:vertical:active {
-  background: rgba(0, 0, 0, .5);
-  border-radius: 100px;
+  --link-color: #1fc8db;
+  --link-color-hover: #847bb9;
+  --border-color: #eee;
+  --text-color: #69707a;
 }
 
 .container {
+  width: var(--root-width);
   overflow-y: scroll;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-.wrapper {
-  width: var(--root-width);
+.box {
   padding: var(--default-padding);
   &:not(:last-child) {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
   }
 }
 
-.heading {
+.header {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   padding-bottom: var(--default-padding);
-  color: #69707a;
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
 }
 
 .name {
   font-size: 28px;
-  font-weight: 200;
+  font-weight: 100;
+}
+
+.time {
+  font-size: var(--default-font-size);
+  font-weight: 300;
 }
 
 .content {
   font-size: var(--default-font-size);
   padding: 0 7px;
-}
-
-.time {
-  font-size: var(--default-font-size);
 }
 
 .none {
@@ -87,13 +55,14 @@ html {
 }
 
 .tab {
-  color: #1fc8db;
+  color: var(--link-color);
   cursor: pointer;
   display: flex;
   padding: 4px 0;
-  &:hover {
-    color: #847bb9;
-  }
+}
+
+.tab:hover {
+  color: var(--link-color-hover);
 }
 
 .favicon {
@@ -105,4 +74,5 @@ html {
 .text {
   margin-left: 10px;
   width: 100%;
+  font-family: "Noto Sans Japanese";
 }

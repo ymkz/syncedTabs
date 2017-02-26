@@ -40,7 +40,7 @@ export default class Setting extends Component {
     return (
       <div styleName="container">
         <header styleName="header">
-          <h1>syncedTabs</h1>
+          <h1 styleName="title">syncedTabs</h1>
           <div styleName="nav">
             <a styleName="icon" href="https://github.com/ymkz/syncedTabs" target="_blank"><i className="fa fa-fw fa-github" aria-hidden="true"></i></a>
           </div>
@@ -48,19 +48,19 @@ export default class Setting extends Component {
         <div styleName="options">
           <div styleName="context">オプション</div>
           <div styleName="option">
-            <input id="optionPinnedInclude" type="checkbox" checked={this.state.optionPinnedInclude} onChange={::this.onChangeOptionPinnedInclude} />
+            <input id="optionPinnedInclude" styleName="switch" type="checkbox" checked={this.state.optionPinnedInclude} onChange={::this.onChangeOptionPinnedInclude} />
             <label htmlFor="optionPinnedInclude">ピン留めされたタブを表示する</label>
           </div>
           <div styleName="option">
-            <input id="optionOpenForeground" type="checkbox" checked={this.state.optionOpenForeground} onChange={::this.onChangeOptionOpenForeground} />
+            <input id="optionOpenForeground" styleName="switch" type="checkbox" checked={this.state.optionOpenForeground} onChange={::this.onChangeOptionOpenForeground} />
             <label htmlFor="optionOpenForeground">リンクをフォアグラウンドで開く</label>
           </div>
           <div styleName="option">
-            <input id="optionLastmodifiedDisplay" type="checkbox" checked={this.state.optionLastmodifiedDisplay} onChange={::this.onChangeOptionLastmodifiedDisplay} />
+            <input id="optionLastmodifiedDisplay" styleName="switch" type="checkbox" checked={this.state.optionLastmodifiedDisplay} onChange={::this.onChangeOptionLastmodifiedDisplay} />
             <label htmlFor="optionLastmodifiedDisplay">最終更新時間を表示する</label>
           </div>
           <div styleName="option">
-            <input id="optionUseDefaultListstyle" type="checkbox" checked={this.state.optionUseDefaultListstyle} onChange={::this.onChangeOptionUseDefaultListstyle} />
+            <input id="optionUseDefaultListstyle" styleName="switch" type="checkbox" checked={this.state.optionUseDefaultListstyle} onChange={::this.onChangeOptionUseDefaultListstyle} />
             <label htmlFor="optionUseDefaultListstyle">デフォルトのリストスタイルで表示する</label>
           </div>
         </div>

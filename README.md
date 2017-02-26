@@ -14,6 +14,7 @@ the same functions is provided `chrome://history/syncedTabs`
 
 
 ## ToDo
+* remove tabs
 * i18n
 * locale(moment.js)
 * ignore setting with Whitelist
@@ -21,6 +22,7 @@ the same functions is provided `chrome://history/syncedTabs`
 
 
 ## Changelog
+* v1.0.9 (2017/02/27) improve setting page and fix fonts
 * v1.0.8 (2017/02/26) implement to list style of favicon
 * v1.0.7 (2017/02/26) implement to display last modified time
 * v1.0.6 (2017/02/25) implement to display if no device

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import store from 'store';
 import moment from 'moment';
+import store from 'store';
 import './style.css';
 
 const OPTION_PINNED_INCLUDE = store.get('optionPinnedInclude') || false;
@@ -10,13 +10,13 @@ const OPTION_LASTMODIFIED_DISPLAY = store.get('optionLastmodifiedDisplay') || fa
 const OPTION_USE_DEFAULT_LISTSTYLE = store.get('optionUseDefaultListstyle') || false;
 
 const get = () => {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     chrome.sessions.getDevices(devices => {
       const data = [];
       devices.map(device => {
+        const tabs = [];
         const deviceName = device.deviceName;
         const lastModified = device.sessions[0].lastModified;
-        const tabs = [];
         device.sessions[0].window.tabs.filter(tab => tab.pinned === false || OPTION_PINNED_INCLUDE === true).map(tab => {
           const info = {
             index: tab.index,
@@ -55,8 +55,8 @@ const Tab = ({ tab, active }) => {
 };
 
 const Device = ({ device, active }) => (
-  <div styleName="wrapper">
-    <div styleName="heading">
+  <div styleName="box">
+    <div styleName="header">
       <span styleName="name">{device.deviceName}</span>
       {OPTION_LASTMODIFIED_DISPLAY &&
         <span styleName="time">{moment.unix(device.lastModified).format('MMMM Do YYYY, H:mm:ss')}</span>

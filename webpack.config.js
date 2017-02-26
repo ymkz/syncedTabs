@@ -44,7 +44,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|ico)$/,
+        test: /\.png$/,
         include: resolve(__dirname, 'src'),
         use: [
           'url-loader',
