@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-html, body, div, span, h1, h2, h3, h4, h5, h6, a, p, code, img, q, small, strong, dl, dt, dd, ol, ul, li, form, label, table, header {
+html, body, div, span, a, p, img, ul, li, label {
   margin: 0;
   padding: 0;
   border: 0;
@@ -15,6 +15,8 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, a, p, code, img, q, small, strong
 :root {
   --root-width: 300px;
   --root-max-height: 720px;
+  --default-padding: 16px;
+  --default-font-size: 14px;
 }
 
 html, body {
@@ -28,12 +30,12 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 5px;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 100px;
 }
 ::-webkit-scrollbar-thumb:vertical {
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, .3);
   border-radius: 100px;
 }
 ::-webkit-scrollbar-thumb:vertical:active {
@@ -43,32 +45,64 @@ html {
 
 .container {
   overflow-y: scroll;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.wrapper {
+  width: var(--root-width);
+  padding: var(--default-padding);
+  &:not(:last-child) {
+    border-bottom: 1px solid #eee;
+  }
 }
 
 .heading {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  padding-bottom: var(--default-padding);
+  color: #69707a;
 }
 
-.modified {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
+.name {
+  font-size: 28px;
+  font-weight: 200;
+}
+
+.content {
+  font-size: var(--default-font-size);
+  padding: 0 7px;
+}
+
+.time {
+  font-size: var(--default-font-size);
 }
 
 .none {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #424242;
 }
 
-.link {
+.tab {
   color: #1fc8db;
   cursor: pointer;
+  display: flex;
+  padding: 4px 0;
   &:hover {
     color: #847bb9;
   }
+}
+
+.favicon {
+  width: var(--default-font-size);
+  height: var(--default-font-size);
+  margin-top: 3px;
+}
+
+.text {
+  margin-left: 10px;
+  width: 100%;
 }

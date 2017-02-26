@@ -29,7 +29,6 @@ module.exports = {
       {
         test: /\.css$/,
         include: resolve(__dirname, './src'),
-        exclude: /node_modules/,
         use: [
           'style-loader',
           {
@@ -42,6 +41,13 @@ module.exports = {
             }
           },
           'postcss-loader',
+        ],
+      },
+      {
+        test: /\.(png|jpg|ico)$/,
+        include: resolve(__dirname, 'src'),
+        use: [
+          'url-loader',
         ],
       },
     ],

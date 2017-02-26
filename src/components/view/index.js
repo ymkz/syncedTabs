@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import store from 'store';
 import moment from 'moment';
-import { Card, CardContent, Content, Subtitle } from 're-bulma';
 import './style.css';
 
-const OPTION_OPEN_FOREGROUND = store.get('optionOpenForeground') || false;
 const OPTION_PINNED_INCLUDE = store.get('optionPinnedInclude') || false;
+const OPTION_OPEN_FOREGROUND = store.get('optionOpenForeground') || false;
 const OPTION_LASTMODIFIED_DISPLAY = store.get('optionLastmodifiedDisplay') || false;
+const OPTION_USE_DEFAULT_LISTSTYLE = store.get('optionUseDefaultListstyle') || false;
 
 const get = () => {
   return new Promise((resolve) => {
@@ -36,45 +36,43 @@ const get = () => {
   });
 }
 
-const Time = ({ time }) => (
-  <div styleName="modified">
-    <span>{moment.unix(time).format('MMMM Do YYYY, H:mm:ss')}</span>
-  </div>
-);
-
-const None = ({ text }) => (
+const Nothing = ({ text }) => (
   <div styleName="none">
     <span>{text}</span>
   </div>
 );
 
-const Tab = ({ tab, active }) => (
-  <li styleName="link" onClick={() => chrome.tabs.create({url: tab.url, active: active})}>
-    <span>{tab.title}</span>
-  </li>
-);
+const Tab = ({ tab, active }) => {
+  const favicon = OPTION_USE_DEFAULT_LISTSTYLE
+    ? require('../../images/default.png')
+    : `http://www.google.com/s2/favicons?domain=${tab.url}`;
+  return (
+    <div styleName="tab" onClick={() => chrome.tabs.create({url: tab.url, active: active})}>
+      <img styleName="favicon" src={favicon} />
+      <span styleName="text">{tab.title}</span>
+    </div>
+  );
+};
 
 const Device = ({ device, active }) => (
-  <Card>
-    <CardContent>
-      <div styleName="heading">
-        <Subtitle size="is3">{device.deviceName}</Subtitle>
-      </div>
+  <div styleName="wrapper">
+    <div styleName="heading">
+      <span styleName="name">{device.deviceName}</span>
       {OPTION_LASTMODIFIED_DISPLAY &&
-        <Time time={device.lastModified} />
+        <span styleName="time">{moment.unix(device.lastModified).format('MMMM Do YYYY, H:mm:ss')}</span>
       }
-      <Content>
-        {device.tabs.length === 0 ?
-          <None text="There are no tabs to display." />
-        : <ul>
-            {device.tabs.map((tab, index) => (
-              <Tab tab={tab} active={active} key={index} />
-            ))}
-          </ul>
-        }
-      </Content>
-    </CardContent>
-  </Card>
+    </div>
+    <div styleName="content">
+      {device.tabs.length === 0 ?
+        <Nothing text="There are no tabs to display." />
+      : <div>
+          {device.tabs.map((tab, index) => (
+            <Tab tab={tab} active={active} key={index} />
+          ))}
+        </div>
+      }
+    </div>
+  </div>
 );
 
 export default class View extends Component {
@@ -93,7 +91,7 @@ export default class View extends Component {
     if (this.state.data.length === 0) {
       return (
         <div styleName="container">
-          <None text="There are no devices to display." />
+          <Nothing text="There are no devices to display." />
         </div>
       );
     }

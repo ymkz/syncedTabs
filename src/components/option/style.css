@@ -21,7 +21,8 @@ html, body, {
 .container {
   width: 40vw;
   margin: 0 auto;
-  font-family: "Mplus 1p";
+  font-weight: normal;
+  font-family: "Noto Sans Japanese";
 }
 
 .header {
@@ -30,6 +31,7 @@ html, body, {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  font-weight: 100;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 36px;
 }

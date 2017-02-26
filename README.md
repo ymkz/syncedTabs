@@ -1,5 +1,5 @@
 # syncedTabs
-> [syncedTabs](https://chrome.google.com/webstore/detail/syncedtabs/pidbmkbopopclkdjflnlcgnefcifdmno) is Chrome Extension with ES6 + Yarn + React + Bulma + (CSS Modules)
+> [syncedTabs](https://chrome.google.com/webstore/detail/syncedtabs/pidbmkbopopclkdjflnlcgnefcifdmno) is Chrome Extension, develop by ES6 + React + CSS Modules
 
 
 ## TL;DR
@@ -13,21 +13,15 @@ the same functions is provided `chrome://history/syncedTabs`
 * Using __Google Chrome__ in your devices
 
 
-## Build
-* `yarn build` : build files to `dist/javascripts/*.bundle.js`
-* `yarn build:watch` : build files to `dist/javascripts/*.bundle.js` observing code change
-
-
 ## ToDo
-* titleがurlのもの[https://|http://|chrome-extension://]はparseしてうまくやる
-* オプションページのi18n対応
-* リストスタイル => favicon
-* lastModifiedの表示(locale)
-* Whitelistでignoreするページの設定する(?)
-* 複数デバイスで重複するページを除去
+* i18n
+* locale(moment.js)
+* ignore setting with Whitelist
+* expect duplicated page into multi devices
 
 
 ## Changelog
+* v1.0.8 (2017/02/26) implement to list style of favicon
 * v1.0.7 (2017/02/26) implement to display last modified time
 * v1.0.6 (2017/02/25) implement to display if no device
 * v1.0.5 (2017/02/17) implement to display if device has no tab

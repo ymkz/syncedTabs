@@ -9,6 +9,7 @@ export default class Setting extends Component {
     optionPinnedInclude: store.get('optionPinnedInclude') || false,
     optionOpenForeground: store.get('optionOpenForeground') || false,
     optionLastmodifiedDisplay: store.get('optionLastmodifiedDisplay') || false,
+    optionUseDefaultListstyle: store.get('optionUseDefaultListstyle') || false,
   }
 
   onChangeOptionPinnedInclude() {
@@ -26,6 +27,12 @@ export default class Setting extends Component {
   onChangeOptionLastmodifiedDisplay() {
     this.setState({ optionLastmodifiedDisplay: !this.state.optionLastmodifiedDisplay }, () => {
       store.set('optionLastmodifiedDisplay', this.state.optionLastmodifiedDisplay);
+    });
+  }
+
+  onChangeOptionUseDefaultListstyle() {
+    this.setState({ optionUseDefaultListstyle: !this.state.optionUseDefaultListstyle }, () => {
+      store.set('optionUseDefaultListstyle', this.state.optionUseDefaultListstyle);
     });
   }
 
@@ -51,6 +58,10 @@ export default class Setting extends Component {
           <div styleName="option">
             <input id="optionLastmodifiedDisplay" type="checkbox" checked={this.state.optionLastmodifiedDisplay} onChange={::this.onChangeOptionLastmodifiedDisplay} />
             <label htmlFor="optionLastmodifiedDisplay">最終更新時間を表示する</label>
+          </div>
+          <div styleName="option">
+            <input id="optionUseDefaultListstyle" type="checkbox" checked={this.state.optionUseDefaultListstyle} onChange={::this.onChangeOptionUseDefaultListstyle} />
+            <label htmlFor="optionUseDefaultListstyle">デフォルトのリストスタイルで表示する</label>
           </div>
         </div>
       </div>
