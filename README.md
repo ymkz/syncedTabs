@@ -14,6 +14,7 @@ the same functions is provided `chrome://history/syncedTabs`
 
 
 ## ToDo
+* remove tabs
 * i18n
 * locale(moment.js)
 * ignore setting with Whitelist
