@@ -1,0 +1,9 @@
+:root {
+  --root-width: 300px;
+  --default-padding: 16px;
+  --default-font-size: 14px;
+  --link-color: #1fc8db;
+  --link-color-hover: #847bb9;
+  --border-color: #eee;
+  --text-color: #69707a;
+}

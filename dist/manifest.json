@@ -11,15 +11,15 @@
     "<all_urls>"
   ],
   "icons": {
-    "16": "images/icon16.png",
-    "48": "images/icon48.png",
-    "128": "images/icon128.png"
+    "16": "public/icon16.png",
+    "48": "public/icon48.png",
+    "128": "public/icon128.png"
   },
   "options_page": "option.html",
   "browser_action": {
-    "default_popup": "index.html",
+    "default_popup": "app.html",
     "default_icon": {
-      "19": "images/icon19.png"
+      "19": "public/icon19.png"
     }
   }
 }

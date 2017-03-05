@@ -17,6 +17,7 @@ the same functions is provided `chrome://history/syncedTabs`
 * remove tabs
 * i18n
 * locale(moment.js)
+* resolve url with [chrome-extension://]
 * ignore setting with Whitelist
 * expect duplicated page into multi devices
 

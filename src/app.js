@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import View from './components/view';
+import App from './components/app';
 
 ReactDOM.render(
-  <View />, document.getElementById("root")
+  <App />, document.getElementById("root")
 )

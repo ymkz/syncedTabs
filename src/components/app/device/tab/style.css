@@ -1,0 +1,25 @@
+@import '../../../shared/constants';
+
+.tab {
+  color: var(--link-color);
+  cursor: pointer;
+  display: flex;
+  padding: 4px 0;
+}
+
+.tab:hover {
+  color: var(--link-color-hover);
+  text-decoration: underline;
+}
+
+.favicon {
+  width: var(--default-font-size);
+  height: var(--default-font-size);
+  margin-top: 3px;
+}
+
+.text {
+  margin-left: 10px;
+  width: 100%;
+  font-family: "Noto Sans Japanese";
+}

@@ -1,0 +1,18 @@
+@import '../shared/reset';
+@import '../shared/constants';
+
+.container {
+  width: var(--root-width);
+  overflow-y: scroll;
+}
+
+.container--none {
+  width: var(--root-width);
+  height : 120px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size:
+}

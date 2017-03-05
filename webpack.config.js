@@ -12,15 +12,16 @@ module.exports = {
   },
 
   output: {
+    publicPath: '/',
     filename: '[name].bundle.js',
-    path: resolve(__dirname, 'dist/javascripts'),
+    path: resolve(__dirname, 'dist'),
   },
 
   module: {
     rules: [
       {
         test: /\.js$/,
-        include: resolve(__dirname, './src'),
+        include: resolve(__dirname, 'src'),
         exclude: /node_modules/,
         use: [
           'babel-loader',
@@ -28,7 +29,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: resolve(__dirname, './src'),
+        include: resolve(__dirname, 'src'),
         use: [
           'style-loader',
           {
