@@ -17,12 +17,12 @@ the same functions is provided `chrome://history/syncedTabs`
 * remove tabs
 * i18n
 * locale(moment.js)
-* resolve url with [chrome-extension://]
 * ignore setting with Whitelist
 * expect duplicated page into multi devices
 
 
 ## Changelog
+* v1.1.0 (2017/03/11) implement to ignore protocol in favicon e.g. [chrome://|chrome-extension://]
 * v1.0.9 (2017/02/27) improve setting page and fix fonts
 * v1.0.8 (2017/02/26) implement to list style of favicon
 * v1.0.7 (2017/02/26) implement to display last modified time

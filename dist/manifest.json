@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "1.0.9",
+  "version": "1.1.0",
   "name": "syncedTabs",
   "short_name": "syncedTabs",
   "description": "access to pages opend in your devices",

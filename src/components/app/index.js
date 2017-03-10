@@ -17,7 +17,7 @@ export default class App extends Component {
   }
 
   render() {
-    console.log("state: ", this.state.data, "length: ", this.state.data.length);
+    console.log("state: ", this.state.data, " length: ", this.state.data.length);
     if (this.state.data.length === 0) {
       return (
         <div styleName="container--none">
