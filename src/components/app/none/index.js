@@ -1,8 +1,8 @@
-import React from 'react';
-import './style.css';
+import React from 'react'
+import './style.css'
 
 export default ({ text }) => (
-  <div styleName="none">
+  <div styleName='none'>
     <span>{text}</span>
   </div>
-);
+)

@@ -2,8 +2,11 @@
   --root-width: 300px;
   --default-padding: 16px;
   --default-font-size: 14px;
-  --link-color: #1fc8db;
-  --link-color-hover: #847bb9;
+  --main-color: #1fc8db;
   --border-color: #eee;
   --text-color: #69707a;
+  --switcher-color: var(--main-color);
+  --switcher-gradient: #23cde0;
+  --link-color: var(--main-color);
+  --link-color-hover: #847bb9;
 }

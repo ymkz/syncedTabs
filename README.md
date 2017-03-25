@@ -18,6 +18,7 @@ the same functions is provided `chrome://history/syncedTabs`
 * i18n
 * locale(moment.js)
 * ignore setting with Whitelist
+* lazy load/display tabs
 * expect duplicated page into multi devices
 
 

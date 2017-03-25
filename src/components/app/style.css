@@ -6,8 +6,7 @@
   overflow-y: scroll;
 }
 
-.container--none {
-  width: var(--root-width);
+.none {
   height : 120px;
   overflow: hidden;
   display: flex;
