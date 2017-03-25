@@ -38,4 +38,5 @@ the same functions is provided `chrome://history/syncedTabs`
 -------------
 
 ### Thanks
-[Material Icons](https://www.google.com/design/icons/)
+resource - [Material Icons](https://www.google.com/design/icons/)  
+technical support - [naoya3e](https://github.com/naoya3e)  

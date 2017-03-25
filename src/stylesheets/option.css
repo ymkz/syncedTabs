@@ -1,5 +1,5 @@
-@import '../shared/reset.css';
-@import '../shared/constants.css';
+@import './reset.css';
+@import './constants.css';
 
 .container {
   width: 40vw;

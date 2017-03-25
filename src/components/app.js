@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import store from 'store'
 import Device from './device'
 import None from './none'
-import { getTabsFromSessions } from '../../utils/fetch'
-import './style.css'
+import { getTabsFromSessions } from '../utils/fetch'
+import '../stylesheets/app.css'
 
 export default class App extends Component {
   constructor (props) {
@@ -18,7 +18,7 @@ export default class App extends Component {
   }
 
   render () {
-    console.log('state: ', this.state.data, ' length: ', this.state.data.length)
+    console.info('state: ', this.state.data, ' length: ', this.state.data.length)
     if (this.state.data.length === 0) {
       return (
         <div styleName='container none'>

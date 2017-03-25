@@ -1,5 +1,5 @@
-@import '../../shared/reset.css';
-@import '../../shared/constants.css';
+@import './reset.css';
+@import './constants.css';
 
 .option {
   padding: 10px;

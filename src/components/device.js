@@ -1,9 +1,9 @@
 import React from 'react'
 import store from 'store'
 import moment from 'moment'
-import None from '../none'
+import None from './none'
 import Tab from './tab'
-import './style.css'
+import '../stylesheets/device.css'
 
 export default ({ device, active }) => (
   <div styleName='box'>

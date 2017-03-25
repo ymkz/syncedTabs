@@ -1,5 +1,5 @@
-@import '../shared/reset';
-@import '../shared/constants';
+@import './reset';
+@import './constants';
 
 .container {
   width: var(--root-width);

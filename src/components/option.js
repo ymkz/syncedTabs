@@ -1,6 +1,6 @@
 import React from 'react'
 import Switch from './switch'
-import './style.css'
+import '../stylesheets/option.css'
 
 export default () => (
   <div styleName='container'>

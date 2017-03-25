@@ -1,4 +1,4 @@
-@import '../../../shared/constants';
+@import './constants';
 
 .tab {
   color: var(--link-color);

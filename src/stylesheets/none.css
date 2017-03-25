@@ -1,8 +1,8 @@
-@import '../../shared/constants';
+@import './constants';
 
 .none {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #424242;
+  color: var(--text-color);
 }

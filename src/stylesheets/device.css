@@ -1,4 +1,4 @@
-@import '../../shared/constants';
+@import './constants';
 
 .box {
   padding: var(--default-padding);
