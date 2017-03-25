@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Setting from './components/option'
+import Option from './components/option'
 
 ReactDOM.render(
-  <Setting />, document.getElementById('root')
+  <Option />, document.getElementById('root')
 )
