@@ -3,7 +3,7 @@ import store from 'store'
 import compose from 'recompose/compose'
 import withState from 'recompose/withState'
 import withHandlers from 'recompose/withHandlers'
-import '../stylesheets/switch.css'
+import '../styles/switch.css'
 
 const enhance = compose(
   withState('checked', 'switchToggle', props => store.get(props.identifier)),

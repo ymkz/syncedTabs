@@ -1,6 +1,6 @@
 import React from 'react'
 import store from 'store'
-import '../stylesheets/tab.css'
+import '../styles/tab.css'
 
 // `https://icons.better-idea.org/icon?url=${tab.url}&size=100`
 // `http://www.google.com/s2/favicons?domain=${tab.url.match(/https?:\/\/[a-zA-Z0-9\-_\.:@!~*'\(¥);\+$,]+/img)[0]}`

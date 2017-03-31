@@ -3,7 +3,7 @@ import store from 'store'
 import moment from 'moment'
 import None from './none'
 import Tab from './tab'
-import '../stylesheets/device.css'
+import '../styles/device.css'
 
 export default ({ device, active }) => (
   <div styleName='box'>

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../stylesheets/none.css'
+import '../styles/none.css'
 
 export default ({ text }) => (
   <div styleName='none'>

@@ -3,7 +3,7 @@ import store from 'store'
 import Device from './device'
 import None from './none'
 import { getTabsFromSessions } from '../utils/fetch'
-import '../stylesheets/app.css'
+import '../styles/app.css'
 
 export default class App extends Component {
   constructor (props) {
