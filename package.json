@@ -10,8 +10,9 @@
     "url": "https://github.com/ymkz/syncedTabs/issues"
   },
   "scripts": {
-    "dev": "webpack --progress --color --watch --display-error-details",
-    "build": "webpack --progress --color --display-error-details",
+    "dev": "webpack --progress --color --devtool source-map --watch --display-error-details",
+    "build": "webpack --progress --color --devtool source-map --display-error-details",
+    "clean": "rm -rf node_modules/ && yarn cache clean && yarn install",
     "archive": "zip -r syncedtabs.zip dist",
     "release": "npm-run-all build archive"
   },

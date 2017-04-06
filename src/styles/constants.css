@@ -4,6 +4,7 @@
   --default-font-size: 14px;
   --main-color: #1fc8db;
   --border-color: #eee;
+  --option-border-color: #424242;
   --text-color: #69707a;
   --switcher-color: var(--main-color);
   --switcher-gradient: #23cde0;

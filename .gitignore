@@ -47,3 +47,4 @@ jspm_packages
 
 # User definition
 *.bundle.js
+*.bundle.js.map
